@@ -1,48 +1,29 @@
 
-import React, { useState } from 'react';
+import React from "react";
 import './../styles/App.css';
-
-const Tabs = ({ tabs }) => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const handleTabClick = (index) => {
-    setActiveTab(index);
-  };
-  
-  
-
-  return (
-    <div>
-      <ul>
-        {tabs.map((tab, index) => (
-          <li
-            key={index}
-            onClick={() => handleTabClick(index)}
-            style={{ cursor: 'pointer' }}
-          >
-            {tab.title}
-          </li>
-        ))}
-      </ul>
-      <div>{tabs[activeTab].content}</div>
-    </div>
-  );
-};
-
-// Usage example
+import Tabs from "./Tabs";
 const App = () => {
-  const tabs = [
-    { title: 'Tab 1', content: 'This is content for Tab 1.' },
-    { title: 'Tab 2', content: 'This is content for Tab 2.' },
-    { title: 'Tab 3', content: 'This is content for Tab 3.' },
-  ];
+  const arr = [
+    {
+        title:"Tab 1",
+        content:"This is the content for Tab 1.",
+    },
+    {
+        title:"Tab 2",
+        content:"This is the content for Tab 2.",
+    },
+    {
+        title:"Tab 3",
+        content:"This is the content for Tab 3.",
+    },
 
+];
   return (
     <div>
-   
-      <Tabs tabs={tabs} />
+        {/* Do not remove the main div */}
+        <Tabs arr={arr}/>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
